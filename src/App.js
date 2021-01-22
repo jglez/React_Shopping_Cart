@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+// Import createContext from React
+import React, { useState, createContext } from 'react'
 import { Route } from 'react-router-dom'
 import data from './data'
 
@@ -6,6 +7,9 @@ import data from './data'
 import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
+
+// Create Context Object
+export const ShopContext = createContext()
 
 function App() {
   const [products] = useState(data)
@@ -17,7 +21,10 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation cart={cart} />
+      {/* Wrap with our Context Object Provider */}
+      <ShopContext.Provider value={cart}>
+        <Navigation />
+      </ShopContext.Provider>
 
       {/* Routes */}
       <Route exact path="/">
