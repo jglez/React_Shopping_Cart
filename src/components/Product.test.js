@@ -1,6 +1,6 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import Product from './Product';
+import React from 'react'
+import { render } from '@testing-library/react'
+import Product from './Product'
 
 test('Product component renders without crashing', () => {
   const wrapper = render(<Product
@@ -11,7 +11,7 @@ test('Product component renders without crashing', () => {
       image:
         'https://images-na.ssl-images-amazon.com/images/I/41FBMkY3cgL._SX331_BO1,204,203,200_.jpg'
     }}
-  />);
+  />)
 
-  wrapper.debug();
+  wrapper.debug()
 });
